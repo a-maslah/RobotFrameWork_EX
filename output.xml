@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.8.8 on win32)" generated="20220328 14:56:03.282" rpa="true" schemaversion="2">
+<suite id="s1" name="App" source="c:\Users\AmineMASLAH\Desktop\RobotFramwork_Automtisation\app.robot">
+<test id="s1-t1" name="Calcul sum of amount by Catagory">
+<kw name="Open the website">
+<kw name="Open Available Browser" library="RPA.Browser.Selenium">
+<arg>https://www.primefaces.org/showcase/index.xhtml?jfwid=a7472</arg>
+<doc>Attempts to open a browser on the user's device from a set of
+supported browsers. Automatically downloads a corresponding webdriver
+if none is already installed.</doc>
+<msg timestamp="20220328 14:56:04.448" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20220328 14:56:05.584" level="INFO">Created Chrome browser with arguments: --disable-dev-shm-usage --disable-web-security --allow-running-insecure-content --no-sandbox</msg>
+<msg timestamp="20220328 14:56:05.584" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg timestamp="20220328 14:56:05.584" level="INFO">Opening url 'https://www.primefaces.org/showcase/index.xhtml?jfwid=a7472'</msg>
+<status status="PASS" starttime="20220328 14:56:04.448" endtime="20220328 14:56:17.213"/>
+</kw>
+<status status="PASS" starttime="20220328 14:56:04.448" endtime="20220328 14:56:17.214"/>
+</kw>
+<kw name="Fill the from">
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>j_idt149:j_idt150_input</arg>
+<arg>DataTable</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:17.217" level="INFO">Typing text 'DataTable' into text field 'j_idt149:j_idt150_input'.</msg>
+<status status="PASS" starttime="20220328 14:56:17.215" endtime="20220328 14:56:17.381"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220328 14:56:22.394" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220328 14:56:17.381" endtime="20220328 14:56:22.394"/>
+</kw>
+<kw name="Press Keys" library="RPA.Browser.Selenium">
+<arg>None</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220328 14:56:22.395" level="INFO">Sending key(s) ('ENTER',) to page.</msg>
+<msg timestamp="20220328 14:56:22.395" level="INFO">Pressing special key ENTER to browser.</msg>
+<msg timestamp="20220328 14:56:22.395" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20220328 14:56:22.394" endtime="20220328 14:56:24.003"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="RPA.Browser.Selenium">
+<arg>id:form:products</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220328 14:56:24.003" endtime="20220328 14:56:24.028"/>
+</kw>
+<status status="PASS" starttime="20220328 14:56:17.215" endtime="20220328 14:56:24.028"/>
+</kw>
+<kw name="get Data File JSON">
+<kw name="Load JSON from file" library="RPA.JSON">
+<var>${json}</var>
+<arg>./app.json</arg>
+<doc>Load JSON data from a file, and return it as JSON serializable object.
+Depending on the input file the object can be either a dictionary,
+a list, or a scalar value.</doc>
+<msg timestamp="20220328 14:56:24.032" level="INFO">Loading JSON from file: ./app.json</msg>
+<msg timestamp="20220328 14:56:24.032" level="INFO">${json} = {'sumAmountAccessories': 186, 'sumAmountFitness': 2, 'sumAmountClothing': 25, 'sumAmountElectronic': 65}</msg>
+<status status="PASS" starttime="20220328 14:56:24.032" endtime="20220328 14:56:24.032"/>
+</kw>
+<kw name="Get value from JSON" library="RPA.JSON">
+<var>${sumAmountAccessories}</var>
+<arg>${json}</arg>
+<arg>$.sumAmountAccessories</arg>
+<doc>Get a single value from a JSON serializable object that matches the given expression.</doc>
+<msg timestamp="20220328 14:56:24.032" level="INFO">Get value from JSON with expression: "$.sumAmountAccessories"</msg>
+<msg timestamp="20220328 14:56:24.049" level="INFO">${sumAmountAccessories} = 186</msg>
+<status status="PASS" starttime="20220328 14:56:24.032" endtime="20220328 14:56:24.049"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>from JSON File</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220328 14:56:24.049" endtime="20220328 14:56:24.049"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${sumAmountAccessories}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220328 14:56:24.049" endtime="20220328 14:56:24.049"/>
+</kw>
+<kw name="Get value from JSON" library="RPA.JSON">
+<var>${sumAmountFitness}</var>
+<arg>${json}</arg>
+<arg>$.sumAmountFitness</arg>
+<doc>Get a single value from a JSON serializable object that matches the given expression.</doc>
+<msg timestamp="20220328 14:56:24.049" level="INFO">Get value from JSON with expression: "$.sumAmountFitness"</msg>
+<msg timestamp="20220328 14:56:24.065" level="INFO">${sumAmountFitness} = 2</msg>
+<status status="PASS" starttime="20220328 14:56:24.049" endtime="20220328 14:56:24.065"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${sumAmountFitness}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220328 14:56:24.065" endtime="20220328 14:56:24.065"/>
+</kw>
+<kw name="Get value from JSON" library="RPA.JSON">
+<var>${sumAmountClothing}</var>
+<arg>${json}</arg>
+<arg>$.sumAmountClothing</arg>
+<doc>Get a single value from a JSON serializable object that matches the given expression.</doc>
+<msg timestamp="20220328 14:56:24.069" level="INFO">Get value from JSON with expression: "$.sumAmountClothing"</msg>
+<msg timestamp="20220328 14:56:24.083" level="INFO">${sumAmountClothing} = 25</msg>
+<status status="PASS" starttime="20220328 14:56:24.065" endtime="20220328 14:56:24.083"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${sumAmountClothing}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220328 14:56:24.083" endtime="20220328 14:56:24.083"/>
+</kw>
+<kw name="Get value from JSON" library="RPA.JSON">
+<var>${sumAmountElectronic}</var>
+<arg>${json}</arg>
+<arg>$.sumAmountElectronic</arg>
+<doc>Get a single value from a JSON serializable object that matches the given expression.</doc>
+<msg timestamp="20220328 14:56:24.083" level="INFO">Get value from JSON with expression: "$.sumAmountElectronic"</msg>
+<msg timestamp="20220328 14:56:24.099" level="INFO">${sumAmountElectronic} = 65</msg>
+<status status="PASS" starttime="20220328 14:56:24.083" endtime="20220328 14:56:24.099"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${sumAmountElectronic}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220328 14:56:24.099" endtime="20220328 14:56:24.099"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${sumAmountAccessories}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220328 14:56:24.103" level="INFO">${sumAmountAccessories} = 186</msg>
+<status status="PASS" starttime="20220328 14:56:24.103" endtime="20220328 14:56:24.103"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${sumAmountFitness}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220328 14:56:24.103" level="INFO">${sumAmountFitness} = 2</msg>
+<status status="PASS" starttime="20220328 14:56:24.103" endtime="20220328 14:56:24.103"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${sumAmountClothing}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220328 14:56:24.103" level="INFO">${sumAmountClothing} = 25</msg>
+<status status="PASS" starttime="20220328 14:56:24.103" endtime="20220328 14:56:24.103"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${sumAmountElectronic}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220328 14:56:24.103" level="INFO">${sumAmountElectronic} = 65</msg>
+<status status="PASS" starttime="20220328 14:56:24.103" endtime="20220328 14:56:24.103"/>
+</kw>
+<status status="PASS" starttime="20220328 14:56:24.028" endtime="20220328 14:56:24.103"/>
+</kw>
+<kw name="get Data from Table and calcul Amount">
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220328 14:56:26.118" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220328 14:56:24.103" endtime="20220328 14:56:26.118"/>
+</kw>
+<kw name="Get Element Count" library="RPA.Browser.Selenium">
+<var>${rowCount}</var>
+<arg>//*[@id="form:products_data"]/tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220328 14:56:26.151" level="INFO">${rowCount} = 10</msg>
+<status status="PASS" starttime="20220328 14:56:26.118" endtime="20220328 14:56:26.151"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${rowIndex}</var>
+<value>1</value>
+<value>${rowCount} + 1</value>
+<iter>
+<var name="${rowIndex}">1</var>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${amount}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:26.198" level="INFO">${amount} = 24</msg>
+<status status="PASS" starttime="20220328 14:56:26.151" endtime="20220328 14:56:26.198"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${category}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:26.246" level="INFO">${category} = Accessories</msg>
+<status status="PASS" starttime="20220328 14:56:26.198" endtime="20220328 14:56:26.246"/>
+</kw>
+<if>
+<branch type="IF" condition="'${category}' == 'Accessories'">
+<kw name="Evaluate" library="BuiltIn">
+<var>${sumAccessories}</var>
+<arg>${sumAccessories} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220328 14:56:26.246" level="INFO">${sumAccessories} = 24</msg>
+<status status="PASS" starttime="20220328 14:56:26.246" endtime="20220328 14:56:26.246"/>
+</kw>
+<status status="PASS" starttime="20220328 14:56:26.246" endtime="20220328 14:56:26.246"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Fitness&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Fitness}</var>
+<arg>${Fitness} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.246" endtime="20220328 14:56:26.246"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.246" endtime="20220328 14:56:26.246"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Clothing&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Clothings}</var>
+<arg>${Clothings} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.246" endtime="20220328 14:56:26.246"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.246" endtime="20220328 14:56:26.246"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Electronics&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Electronics}</var>
+<arg>${Electronics} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.246" endtime="20220328 14:56:26.246"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.246" endtime="20220328 14:56:26.246"/>
+</branch>
+<status status="PASS" starttime="20220328 14:56:26.246" endtime="20220328 14:56:26.246"/>
+</if>
+<status status="PASS" starttime="20220328 14:56:26.151" endtime="20220328 14:56:26.246"/>
+</iter>
+<iter>
+<var name="${rowIndex}">2</var>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${amount}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:26.293" level="INFO">${amount} = 61</msg>
+<status status="PASS" starttime="20220328 14:56:26.251" endtime="20220328 14:56:26.293"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${category}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:26.339" level="INFO">${category} = Accessories</msg>
+<status status="PASS" starttime="20220328 14:56:26.293" endtime="20220328 14:56:26.339"/>
+</kw>
+<if>
+<branch type="IF" condition="'${category}' == 'Accessories'">
+<kw name="Evaluate" library="BuiltIn">
+<var>${sumAccessories}</var>
+<arg>${sumAccessories} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220328 14:56:26.339" level="INFO">${sumAccessories} = 85</msg>
+<status status="PASS" starttime="20220328 14:56:26.339" endtime="20220328 14:56:26.339"/>
+</kw>
+<status status="PASS" starttime="20220328 14:56:26.339" endtime="20220328 14:56:26.339"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Fitness&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Fitness}</var>
+<arg>${Fitness} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.339" endtime="20220328 14:56:26.339"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.339" endtime="20220328 14:56:26.339"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Clothing&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Clothings}</var>
+<arg>${Clothings} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.339" endtime="20220328 14:56:26.339"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.339" endtime="20220328 14:56:26.339"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Electronics&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Electronics}</var>
+<arg>${Electronics} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.339" endtime="20220328 14:56:26.339"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.339" endtime="20220328 14:56:26.339"/>
+</branch>
+<status status="PASS" starttime="20220328 14:56:26.339" endtime="20220328 14:56:26.339"/>
+</if>
+<status status="PASS" starttime="20220328 14:56:26.250" endtime="20220328 14:56:26.339"/>
+</iter>
+<iter>
+<var name="${rowIndex}">3</var>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${amount}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:26.383" level="INFO">${amount} = 2</msg>
+<status status="PASS" starttime="20220328 14:56:26.339" endtime="20220328 14:56:26.383"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${category}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:26.438" level="INFO">${category} = Fitness</msg>
+<status status="PASS" starttime="20220328 14:56:26.383" endtime="20220328 14:56:26.438"/>
+</kw>
+<if>
+<branch type="IF" condition="'${category}' == 'Accessories'">
+<kw name="Evaluate" library="BuiltIn">
+<var>${sumAccessories}</var>
+<arg>${sumAccessories} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.438" endtime="20220328 14:56:26.438"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.438" endtime="20220328 14:56:26.438"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Fitness&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Fitness}</var>
+<arg>${Fitness} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220328 14:56:26.438" level="INFO">${Fitness} = 2</msg>
+<status status="PASS" starttime="20220328 14:56:26.438" endtime="20220328 14:56:26.438"/>
+</kw>
+<status status="PASS" starttime="20220328 14:56:26.438" endtime="20220328 14:56:26.438"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Clothing&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Clothings}</var>
+<arg>${Clothings} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.438" endtime="20220328 14:56:26.438"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.438" endtime="20220328 14:56:26.438"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Electronics&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Electronics}</var>
+<arg>${Electronics} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.438" endtime="20220328 14:56:26.438"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.438" endtime="20220328 14:56:26.438"/>
+</branch>
+<status status="PASS" starttime="20220328 14:56:26.438" endtime="20220328 14:56:26.438"/>
+</if>
+<status status="PASS" starttime="20220328 14:56:26.339" endtime="20220328 14:56:26.438"/>
+</iter>
+<iter>
+<var name="${rowIndex}">4</var>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${amount}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:26.492" level="INFO">${amount} = 25</msg>
+<status status="PASS" starttime="20220328 14:56:26.443" endtime="20220328 14:56:26.492"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${category}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:26.542" level="INFO">${category} = Clothing</msg>
+<status status="PASS" starttime="20220328 14:56:26.493" endtime="20220328 14:56:26.542"/>
+</kw>
+<if>
+<branch type="IF" condition="'${category}' == 'Accessories'">
+<kw name="Evaluate" library="BuiltIn">
+<var>${sumAccessories}</var>
+<arg>${sumAccessories} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.542" endtime="20220328 14:56:26.542"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.542" endtime="20220328 14:56:26.542"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Fitness&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Fitness}</var>
+<arg>${Fitness} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.542" endtime="20220328 14:56:26.542"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.542" endtime="20220328 14:56:26.542"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Clothing&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Clothings}</var>
+<arg>${Clothings} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220328 14:56:26.546" level="INFO">${Clothings} = 25</msg>
+<status status="PASS" starttime="20220328 14:56:26.542" endtime="20220328 14:56:26.546"/>
+</kw>
+<status status="PASS" starttime="20220328 14:56:26.542" endtime="20220328 14:56:26.546"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Electronics&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Electronics}</var>
+<arg>${Electronics} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.546" endtime="20220328 14:56:26.546"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.546" endtime="20220328 14:56:26.546"/>
+</branch>
+<status status="PASS" starttime="20220328 14:56:26.542" endtime="20220328 14:56:26.546"/>
+</if>
+<status status="PASS" starttime="20220328 14:56:26.438" endtime="20220328 14:56:26.546"/>
+</iter>
+<iter>
+<var name="${rowIndex}">5</var>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${amount}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:26.586" level="INFO">${amount} = 73</msg>
+<status status="PASS" starttime="20220328 14:56:26.546" endtime="20220328 14:56:26.586"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${category}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:26.633" level="INFO">${category} = Accessories</msg>
+<status status="PASS" starttime="20220328 14:56:26.586" endtime="20220328 14:56:26.633"/>
+</kw>
+<if>
+<branch type="IF" condition="'${category}' == 'Accessories'">
+<kw name="Evaluate" library="BuiltIn">
+<var>${sumAccessories}</var>
+<arg>${sumAccessories} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220328 14:56:26.633" level="INFO">${sumAccessories} = 158</msg>
+<status status="PASS" starttime="20220328 14:56:26.633" endtime="20220328 14:56:26.633"/>
+</kw>
+<status status="PASS" starttime="20220328 14:56:26.633" endtime="20220328 14:56:26.633"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Fitness&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Fitness}</var>
+<arg>${Fitness} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.637" endtime="20220328 14:56:26.637"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.637" endtime="20220328 14:56:26.637"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Clothing&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Clothings}</var>
+<arg>${Clothings} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.637" endtime="20220328 14:56:26.637"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.637" endtime="20220328 14:56:26.637"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Electronics&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Electronics}</var>
+<arg>${Electronics} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.637" endtime="20220328 14:56:26.637"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.637" endtime="20220328 14:56:26.637"/>
+</branch>
+<status status="PASS" starttime="20220328 14:56:26.633" endtime="20220328 14:56:26.637"/>
+</if>
+<status status="PASS" starttime="20220328 14:56:26.546" endtime="20220328 14:56:26.637"/>
+</iter>
+<iter>
+<var name="${rowIndex}">6</var>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${amount}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:26.687" level="INFO">${amount} = 0</msg>
+<status status="PASS" starttime="20220328 14:56:26.637" endtime="20220328 14:56:26.687"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${category}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:26.726" level="INFO">${category} = Accessories</msg>
+<status status="PASS" starttime="20220328 14:56:26.687" endtime="20220328 14:56:26.726"/>
+</kw>
+<if>
+<branch type="IF" condition="'${category}' == 'Accessories'">
+<kw name="Evaluate" library="BuiltIn">
+<var>${sumAccessories}</var>
+<arg>${sumAccessories} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220328 14:56:26.726" level="INFO">${sumAccessories} = 158</msg>
+<status status="PASS" starttime="20220328 14:56:26.726" endtime="20220328 14:56:26.726"/>
+</kw>
+<status status="PASS" starttime="20220328 14:56:26.726" endtime="20220328 14:56:26.726"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Fitness&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Fitness}</var>
+<arg>${Fitness} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.730" endtime="20220328 14:56:26.730"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.726" endtime="20220328 14:56:26.730"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Clothing&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Clothings}</var>
+<arg>${Clothings} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.730" endtime="20220328 14:56:26.730"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.730" endtime="20220328 14:56:26.730"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Electronics&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Electronics}</var>
+<arg>${Electronics} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.730" endtime="20220328 14:56:26.730"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.730" endtime="20220328 14:56:26.730"/>
+</branch>
+<status status="PASS" starttime="20220328 14:56:26.726" endtime="20220328 14:56:26.730"/>
+</if>
+<status status="PASS" starttime="20220328 14:56:26.637" endtime="20220328 14:56:26.730"/>
+</iter>
+<iter>
+<var name="${rowIndex}">7</var>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${amount}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:26.780" level="INFO">${amount} = 5</msg>
+<status status="PASS" starttime="20220328 14:56:26.730" endtime="20220328 14:56:26.780"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${category}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:26.831" level="INFO">${category} = Accessories</msg>
+<status status="PASS" starttime="20220328 14:56:26.780" endtime="20220328 14:56:26.831"/>
+</kw>
+<if>
+<branch type="IF" condition="'${category}' == 'Accessories'">
+<kw name="Evaluate" library="BuiltIn">
+<var>${sumAccessories}</var>
+<arg>${sumAccessories} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220328 14:56:26.831" level="INFO">${sumAccessories} = 163</msg>
+<status status="PASS" starttime="20220328 14:56:26.831" endtime="20220328 14:56:26.831"/>
+</kw>
+<status status="PASS" starttime="20220328 14:56:26.831" endtime="20220328 14:56:26.831"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Fitness&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Fitness}</var>
+<arg>${Fitness} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.831" endtime="20220328 14:56:26.831"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.831" endtime="20220328 14:56:26.831"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Clothing&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Clothings}</var>
+<arg>${Clothings} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.831" endtime="20220328 14:56:26.831"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.831" endtime="20220328 14:56:26.831"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Electronics&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Electronics}</var>
+<arg>${Electronics} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.831" endtime="20220328 14:56:26.831"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.831" endtime="20220328 14:56:26.831"/>
+</branch>
+<status status="PASS" starttime="20220328 14:56:26.831" endtime="20220328 14:56:26.831"/>
+</if>
+<status status="PASS" starttime="20220328 14:56:26.730" endtime="20220328 14:56:26.831"/>
+</iter>
+<iter>
+<var name="${rowIndex}">8</var>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${amount}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:26.875" level="INFO">${amount} = 23</msg>
+<status status="PASS" starttime="20220328 14:56:26.831" endtime="20220328 14:56:26.875"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${category}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:26.917" level="INFO">${category} = Accessories</msg>
+<status status="PASS" starttime="20220328 14:56:26.879" endtime="20220328 14:56:26.917"/>
+</kw>
+<if>
+<branch type="IF" condition="'${category}' == 'Accessories'">
+<kw name="Evaluate" library="BuiltIn">
+<var>${sumAccessories}</var>
+<arg>${sumAccessories} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220328 14:56:26.921" level="INFO">${sumAccessories} = 186</msg>
+<status status="PASS" starttime="20220328 14:56:26.917" endtime="20220328 14:56:26.921"/>
+</kw>
+<status status="PASS" starttime="20220328 14:56:26.917" endtime="20220328 14:56:26.921"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Fitness&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Fitness}</var>
+<arg>${Fitness} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.921" endtime="20220328 14:56:26.921"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.921" endtime="20220328 14:56:26.921"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Clothing&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Clothings}</var>
+<arg>${Clothings} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.921" endtime="20220328 14:56:26.921"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.921" endtime="20220328 14:56:26.921"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Electronics&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Electronics}</var>
+<arg>${Electronics} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:26.921" endtime="20220328 14:56:26.921"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:26.921" endtime="20220328 14:56:26.921"/>
+</branch>
+<status status="PASS" starttime="20220328 14:56:26.917" endtime="20220328 14:56:26.925"/>
+</if>
+<status status="PASS" starttime="20220328 14:56:26.831" endtime="20220328 14:56:26.925"/>
+</iter>
+<iter>
+<var name="${rowIndex}">9</var>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${amount}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:26.971" level="INFO">${amount} = 2</msg>
+<status status="PASS" starttime="20220328 14:56:26.925" endtime="20220328 14:56:26.971"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${category}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:27.014" level="INFO">${category} = Electronics</msg>
+<status status="PASS" starttime="20220328 14:56:26.971" endtime="20220328 14:56:27.014"/>
+</kw>
+<if>
+<branch type="IF" condition="'${category}' == 'Accessories'">
+<kw name="Evaluate" library="BuiltIn">
+<var>${sumAccessories}</var>
+<arg>${sumAccessories} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:27.014" endtime="20220328 14:56:27.014"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:27.014" endtime="20220328 14:56:27.014"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Fitness&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Fitness}</var>
+<arg>${Fitness} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:27.014" endtime="20220328 14:56:27.014"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:27.014" endtime="20220328 14:56:27.014"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Clothing&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Clothings}</var>
+<arg>${Clothings} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:27.014" endtime="20220328 14:56:27.014"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:27.014" endtime="20220328 14:56:27.014"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Electronics&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Electronics}</var>
+<arg>${Electronics} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220328 14:56:27.014" level="INFO">${Electronics} = 2</msg>
+<status status="PASS" starttime="20220328 14:56:27.014" endtime="20220328 14:56:27.014"/>
+</kw>
+<status status="PASS" starttime="20220328 14:56:27.014" endtime="20220328 14:56:27.014"/>
+</branch>
+<status status="PASS" starttime="20220328 14:56:27.014" endtime="20220328 14:56:27.014"/>
+</if>
+<status status="PASS" starttime="20220328 14:56:26.925" endtime="20220328 14:56:27.014"/>
+</iter>
+<iter>
+<var name="${rowIndex}">10</var>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${amount}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:27.062" level="INFO">${amount} = 63</msg>
+<status status="PASS" starttime="20220328 14:56:27.018" endtime="20220328 14:56:27.062"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${category}</var>
+<arg>//*[@id="form:products_data"]/tr[${rowIndex}]/td[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220328 14:56:27.100" level="INFO">${category} = Electronics</msg>
+<status status="PASS" starttime="20220328 14:56:27.062" endtime="20220328 14:56:27.100"/>
+</kw>
+<if>
+<branch type="IF" condition="'${category}' == 'Accessories'">
+<kw name="Evaluate" library="BuiltIn">
+<var>${sumAccessories}</var>
+<arg>${sumAccessories} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:27.100" endtime="20220328 14:56:27.100"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:27.100" endtime="20220328 14:56:27.100"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Fitness&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Fitness}</var>
+<arg>${Fitness} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:27.100" endtime="20220328 14:56:27.100"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:27.100" endtime="20220328 14:56:27.100"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Clothing&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Clothings}</var>
+<arg>${Clothings} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220328 14:56:27.100" endtime="20220328 14:56:27.100"/>
+</kw>
+<status status="NOT RUN" starttime="20220328 14:56:27.100" endtime="20220328 14:56:27.100"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Electronics&quot;">
+<kw name="Evaluate" library="BuiltIn">
+<var>${Electronics}</var>
+<arg>${Electronics} + ${amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220328 14:56:27.100" level="INFO">${Electronics} = 65</msg>
+<status status="PASS" starttime="20220328 14:56:27.100" endtime="20220328 14:56:27.100"/>
+</kw>
+<status status="PASS" starttime="20220328 14:56:27.100" endtime="20220328 14:56:27.100"/>
+</branch>
+<status status="PASS" starttime="20220328 14:56:27.100" endtime="20220328 14:56:27.100"/>
+</if>
+<status status="PASS" starttime="20220328 14:56:27.018" endtime="20220328 14:56:27.100"/>
+</iter>
+<status status="PASS" starttime="20220328 14:56:26.151" endtime="20220328 14:56:27.100"/>
+</for>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${sumAccessories}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220328 14:56:27.104" level="INFO">${sumAccessories} = 186</msg>
+<status status="PASS" starttime="20220328 14:56:27.104" endtime="20220328 14:56:27.104"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${Electronics}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220328 14:56:27.104" level="INFO">${Electronics} = 65</msg>
+<status status="PASS" starttime="20220328 14:56:27.104" endtime="20220328 14:56:27.104"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${Fitness}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220328 14:56:27.104" level="INFO">${Fitness} = 2</msg>
+<status status="PASS" starttime="20220328 14:56:27.104" endtime="20220328 14:56:27.104"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${Clothings}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220328 14:56:27.104" level="INFO">${Clothings} = 25</msg>
+<status status="PASS" starttime="20220328 14:56:27.104" endtime="20220328 14:56:27.104"/>
+</kw>
+<status status="PASS" starttime="20220328 14:56:24.103" endtime="20220328 14:56:27.104"/>
+</kw>
+<kw name="Verifying values of sum Amount">
+<kw name="Log To Console" library="BuiltIn">
+<arg>-----------------------</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220328 14:56:27.108" endtime="20220328 14:56:27.108"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${sumAmountAccessories}</arg>
+<arg>${sumAccessories}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220328 14:56:27.108" endtime="20220328 14:56:27.109"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${sumAmountFitness}</arg>
+<arg>${Fitness}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220328 14:56:27.109" endtime="20220328 14:56:27.109"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${sumAmountClothing}</arg>
+<arg>${Clothings}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220328 14:56:27.109" endtime="20220328 14:56:27.109"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${sumAmountElectronic}</arg>
+<arg>${Electronics}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220328 14:56:27.109" endtime="20220328 14:56:27.109"/>
+</kw>
+<status status="PASS" starttime="20220328 14:56:27.104" endtime="20220328 14:56:27.109"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220328 14:56:32.113" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220328 14:56:27.109" endtime="20220328 14:56:32.113"/>
+</kw>
+<status status="PASS" starttime="20220328 14:56:04.445" endtime="20220328 14:56:32.113"/>
+</test>
+<doc>Insert the sales data for the week and export it as a PDF.</doc>
+<status status="PASS" starttime="20220328 14:56:03.286" endtime="20220328 14:56:32.119"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="App">App</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220328 14:56:04.011" level="WARN">C:\Users\AmineMASLAH\AppData\Local\Programs\Python\Python38\lib\site-packages\RPA\Desktop\Windows.py:209: FutureWarning: `RPA.Desktop.Windows` got deprecated and will be no longer maintained, please use `RPA.Windows` instead (https://robocorp.com/docs/libraries/rpa-framework/rpa-windows)
+  deprecation(
+</msg>
+</errors>
+</robot>
